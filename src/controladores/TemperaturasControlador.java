@@ -5,9 +5,6 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.data.time.Day;
-import org.jfree.data.time.TimeSeries;
-import org.jfree.data.time.TimeSeriesCollection;
 import servicios.TemperaturaServicio;
 import vistas.TemperaturasVista;
 
@@ -18,14 +15,13 @@ import java.util.List;
 public class TemperaturasControlador {
 
     private final TemperaturasVista vista;
-    private List<String> ciudades;
     private List<Temperatura> temperaturas;
 
     public TemperaturasControlador(TemperaturasVista vista) {
         this.vista = vista;
 
         this.vista.setGraficarClick(evento -> graficar());
-        this.vista.setCalcularEstadisticasClick(evento -> calcularEstadisticas());
+        this.vista.setMasMenosCalurosaClick(evento -> calcularEstadisticas());
         cargarDatos();
     }
 

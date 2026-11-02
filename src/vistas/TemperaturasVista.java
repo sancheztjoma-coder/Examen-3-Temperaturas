@@ -4,8 +4,6 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.List;
-import java.util.Map;
 
 import javax.swing.*;
 
@@ -23,7 +21,7 @@ public class TemperaturasVista extends JFrame {
     private JPanel pnlGrafica;
     private JPanel pnlEstadisticas;
 
-    JButton btnGraficar, btnCalcularEstadisticas;
+    JButton btnGraficar, btnMasMenosCalurosa;
 
     
 
@@ -40,10 +38,10 @@ public class TemperaturasVista extends JFrame {
         btnGraficar.setToolTipText("Grafica promedio temperatura");
         tb.add(btnGraficar);
 
-        btnCalcularEstadisticas = new JButton();
-        btnCalcularEstadisticas.setIcon(new ImageIcon(getClass().getResource("/iconos/Datos.png")));
-        btnCalcularEstadisticas.setToolTipText("Ciudad más calurosa y menos calurosa");
-        tb.add(btnCalcularEstadisticas);
+        btnMasMenosCalurosa = new JButton();
+        btnMasMenosCalurosa.setIcon(new ImageIcon(getClass().getResource("/iconos/Datos.png")));
+        btnMasMenosCalurosa.setToolTipText("Ciudad más calurosa y menos calurosa");
+        tb.add(btnMasMenosCalurosa);
 
         
         JPanel pnlCambios = new JPanel();
@@ -101,8 +99,8 @@ public class TemperaturasVista extends JFrame {
             });
     }
 
-    public void setCalcularEstadisticasClick(ActionListener evento) {
-        btnCalcularEstadisticas.addActionListener(e -> {
+    public void setMasMenosCalurosaClick(ActionListener evento) {
+        btnMasMenosCalurosa.addActionListener(e -> {
             dccHasta.setVisible(false);
             evento.actionPerformed(e);
         });
